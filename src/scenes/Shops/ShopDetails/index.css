@@ -1,0 +1,54 @@
+.shop-page .ant-tabs {
+  background: white;
+  padding: 10px 40px;
+  position: relative;
+}
+
+.shop-page .ant-tabs-content {
+  padding: 10px;
+}
+
+.back-button {
+  position: absolute;
+  top: 100px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 0 10px;
+  z-index: 100;
+  transition: 0.3s;
+}
+.shop-page .back-button:hover {
+  color: var(--primary-color);
+}
+
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+}
+
+.opening-times-row > span {
+  display: inline-block;
+}
+.opening-times-row {
+  margin: 0 auto -10px;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  width: 100%;
+}
+.opening-times-row:first-of-type {
+  margin: 0 auto 20px;
+}

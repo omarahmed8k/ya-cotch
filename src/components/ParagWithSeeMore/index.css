@@ -1,0 +1,23 @@
+.message-parag {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0;
+}
+.more-btn {
+  background: transparent;
+  color: green;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.message-parag.expand {
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+}

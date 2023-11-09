@@ -1,0 +1,29 @@
+.details-modal {
+  height: 60vh;
+  overflow-y: auto;
+}
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+.detail-wrapper.big {
+  width: 100%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+}
+
+.detail-value.permissions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

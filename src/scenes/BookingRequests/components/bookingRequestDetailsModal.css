@@ -1,0 +1,29 @@
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+}
+
+.booking-req-modal {
+  height: 60vh;
+  overflow: auto;
+}
+
+.booking-req-modal .ant-tabs {
+  margin-top: -14px;
+}
+
+.ant-timeline-item-content {
+  margin: 0 15px !important;
+}

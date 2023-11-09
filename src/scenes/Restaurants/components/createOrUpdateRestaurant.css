@@ -1,0 +1,61 @@
+.restaurant-modal {
+  height: 70vh;
+  overflow: auto;
+}
+
+.restaurant-modal .ant-tabs {
+  margin-top: -16px;
+}
+
+.opening-times-row > span {
+  display: inline-block;
+}
+.opening-times-row {
+  margin: 0 auto -10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+.opening-times-row:first-of-type {
+  margin: 0 auto 20px;
+}
+.opening-times-row .apply-to-all {
+  width: fit-content;
+}
+
+.openTime-checkbox {
+  position: relative;
+  top: 0px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: white;
+  border-radius: 3px;
+  width: 24px !important;
+  height: 24px !important;
+  cursor: pointer;
+}
+
+.openTime-checkbox:hover {
+  box-shadow: none !important;
+}
+
+.openTime-checkbox:after {
+  content: '✔';
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: -4px;
+  border: none;
+}
+
+.openTime-checkbox:checked {
+  background-color: var(--primary-color);
+}
+
+.openTime-checkbox:checked::after {
+  display: block;
+}

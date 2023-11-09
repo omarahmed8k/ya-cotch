@@ -1,0 +1,61 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.trigger:hover {
+  color: @primary-color;
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.header-container {
+  -webkit-box-shadow: 0px 6px 50px -18px rgba(0, 0, 0, 0.81);
+  -moz-box-shadow: 0px 6px 50px -18px rgba(0, 0, 0, 0.81);
+  box-shadow: 0px 6px 50px -18px rgba(0, 0, 0, 0.81);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.first-col,
+.second-col {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container.rtl .first-col {
+  right: 0;
+}
+.header-container.ltr .first-col {
+  left: 0;
+}
+
+.header-container.rtl .second-col {
+  right: 94%;
+}
+.header-container.ltr .second-col {
+  right: 0;
+}
+
+.header-container .trigger,
+.header-container .global-icon {
+  top: 5px;
+  font-size: 20px;
+}
+.header-container .more-icon {
+  top: 3px;
+  font-size: 20px;
+}

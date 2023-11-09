@@ -1,0 +1,55 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: @primary-color;
+}
+.sidebar-menu {
+  background-color: white !important;
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.sidebar {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 3px 10px 30px 3px rgba(0, 0, 0, 0.19);
+}
+
+.sidebar .submenu,
+.ant-menu {
+  color: black;
+  background-color: white !important;
+  border: 0;
+}
+
+.ant-menu-item:hover,
+.ant-menu-submenu:hover {
+  background-color: var(--primary-color) !important;
+  color: black !important;
+}
+.ant-menu-submenu:hover .ant-menu-submenu-title {
+  color: black !important;
+}
+
+.ant-menu-item-selected {
+  font-weight: 600;
+  background-color: var(--primary-color) !important;
+}
+
+.ant-menu-submenu-title .ant-menu-submenu-arrow::before,
+.ant-menu-submenu-title .ant-menu-submenu-arrow::after {
+  background: black !important;
+}
+.ant-menu-submenu-title:hover .ant-menu-submenu-arrow::before,
+.ant-menu-submenu-title:hover .ant-menu-submenu-arrow::after {
+  background: black !important;
+}

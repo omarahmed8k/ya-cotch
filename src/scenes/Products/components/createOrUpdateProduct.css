@@ -1,0 +1,8 @@
+.product-modal {
+  height: 70vh;
+  overflow: auto;
+}
+
+.product-modal .ant-tabs {
+  margin-top: -16px;
+}

@@ -1,0 +1,8 @@
+.dish-modal {
+  height: 70vh;
+  overflow: auto;
+}
+
+.dish-modal .ant-tabs {
+  margin-top: -16px;
+}

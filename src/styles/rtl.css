@@ -1,0 +1,56 @@
+* {
+  direction: rtl;
+  text-align: right;
+}
+
+.lang .global-icon {
+  right: 97%;
+}
+
+.rtl-content .ant-table-row-cell-break-word {
+  text-align: right !important;
+}
+
+.ant-modal.rtl .ant-modal-confirm-btns {
+  float: left;
+}
+.ant-modal.rtl .ant-modal-confirm-btns button,
+.ant-modal.rtl-modal .ant-modal-footer button {
+  margin-right: 8px !important;
+  margin-left: 0px !important;
+}
+
+.ant-modal.rtl-modal .ant-modal-close {
+  right: auto;
+  left: 0;
+}
+.ant-modal.rtl-modal .ant-modal-footer {
+  text-align: left;
+}
+
+.notification-rtl {
+  position: relative;
+}
+.notification-rtl .ant-notification-notice-close {
+  position: absolute;
+  right: 93% !important;
+  width: fit-content !important;
+}
+.notification-rtl .anticon-check-circle {
+  margin: 0 -5px 0 0 !important;
+}
+
+.ant-select-arrow {
+  inset-inline-start: 80% !important;
+}
+.ant-pagination-item.ant-pagination-item a {
+  text-align: center;
+}
+.trainer-page .ant-tabs-content,
+.dish-page .ant-tabs-content,
+.shop-page .ant-tabs-content,
+.product-page .ant-tabs-content,
+.course-page .ant-tabs-content,
+.restaurant-page .ant-tabs-content {
+  padding: 10px 30px !important;
+}
