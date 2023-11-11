@@ -33,7 +33,7 @@ class App extends React.Component<IAppProps> {
     if (localization.isRTL()) require('./styles/rtl.css');
     else require('./styles/ltr.css');
   }
-
+ 
   public render() {
     return <Router />;
   }
