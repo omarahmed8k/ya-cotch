@@ -24,7 +24,7 @@ export const appRouters: any = [
     path: '/',
     exact: true,
     name: 'home',
-    permission: '',
+    // permission: '',
     title: 'Home',
     component: LoadableComponent(() => import('../../components/Layout/AppLayout')),
     isLayout: true,
@@ -33,7 +33,7 @@ export const appRouters: any = [
   {
     path: '/dashboard',
     name: 'dashboard',
-    permission: '',
+    // permission: '',
     title: 'Dashboard',
     icon: HomeOutlined,
     showInMenu: true,
@@ -41,7 +41,7 @@ export const appRouters: any = [
   },
 
   {
-    permission: 'TrainersManagement',
+    // permission: 'TrainersManagement',
     title: 'Trainers',
     name: 'trainer-menu',
     icon: TrophyOutlined,
@@ -50,7 +50,7 @@ export const appRouters: any = [
   },
   {
     path: '/trainers',
-    permission: 'TrainersManagement',
+    // permission: 'TrainersManagement',
     title: 'Trainers',
     baseMenuItem: 'trainer-menu',
     name: 'trainer',
@@ -60,7 +60,7 @@ export const appRouters: any = [
   },
   {
     path: "/trainer/:id",
-    permission: 'TrainersManagement',
+    // permission: 'TrainersManagement',
     title: 'TrainerDetails',
     name: 'trainerDetails',
     icon: "",
@@ -69,7 +69,7 @@ export const appRouters: any = [
   },
   {
     path: '/specializations',
-    permission: 'IndicesManagement',
+    // permission: 'IndicesManagement',
     title: 'Specializations',
     name: 'specialization',
     baseMenuItem: 'trainer-menu',
@@ -82,7 +82,7 @@ export const appRouters: any = [
 
   {
     path: '/trainees',
-    permission: 'TraineesManagement',
+    // permission: 'TraineesManagement',
     title: 'Trainees',
     name: 'trainee',
     icon: UserOutlined,
@@ -91,7 +91,7 @@ export const appRouters: any = [
   },
   {
     path: "/trainee/:id",
-    permission: 'TraineesManagement',
+    // permission: 'TraineesManagement',
     title: 'TraineeDetails',
     name: 'traineeDetails',
     icon: "",
@@ -102,7 +102,7 @@ export const appRouters: any = [
 
   {
     title: 'Courses',
-    permission: 'CoursesManagement',
+    // permission: 'CoursesManagement',
     name: 'course-menu',
     icon: SolutionOutlined,
     showInMenu: true,
@@ -110,7 +110,7 @@ export const appRouters: any = [
   },
   {
     path: '/courses',
-    permission: 'CoursesManagement',
+    // permission: 'CoursesManagement',
     title: 'Courses',
     baseMenuItem: 'course-menu',
     name: 'course',
@@ -120,7 +120,7 @@ export const appRouters: any = [
   },
   {
     path: '/booking-requests',
-    permission: 'CoursesManagement',
+    // permission: 'CoursesManagement',
     title: 'BookingRequests',
     baseMenuItem: 'course-menu',
     name: 'bookingRequest',
@@ -130,7 +130,7 @@ export const appRouters: any = [
   },
   {
     path: "/course/:id",
-    permission: 'CoursesManagement',
+    // permission: 'CoursesManagement',
     title: 'CourseDetails',
     name: 'courseDetails',
     icon: "",
@@ -139,7 +139,7 @@ export const appRouters: any = [
   },
   {
     path: '/categories',
-    permission: 'CategoriesManagement',
+    // permission: 'CategoriesManagement',
     title: 'Categories',
     name: 'category',
     icon: TagsOutlined,
@@ -148,7 +148,7 @@ export const appRouters: any = [
   },
 
   {
-    permission: 'RestaurantsManagement',
+    // permission: 'RestaurantsManagement',
     title: 'Restaurants',
     name: 'restaurant-menu',
     icon: ShopOutlined,
@@ -157,7 +157,7 @@ export const appRouters: any = [
   {
     path: '/restaurants',
     title: 'Restaurants',
-    permission: 'RestaurantsManagement',
+    // permission: 'RestaurantsManagement',
     name: 'restaurant',
     baseMenuItem: 'restaurant-menu',
     icon: ShopOutlined,
@@ -166,7 +166,7 @@ export const appRouters: any = [
   },
   {
     path: "/restaurant/:id",
-    permission: 'RestaurantsManagement',
+    // permission: 'RestaurantsManagement',
     title: 'RestaurantDetails',
     name: 'restaurantDetails',
     icon: "",
@@ -176,7 +176,7 @@ export const appRouters: any = [
   {
     path: '/restaurants-managers',
     title: 'RestaurantManagers',
-    permission: 'RestaurantsManagement',
+    // permission: 'RestaurantsManagement',
     name: 'restaurantsManager',
     baseMenuItem: 'restaurant-menu',
     icon: UserOutlined,
@@ -186,7 +186,7 @@ export const appRouters: any = [
   {
     path: '/restaurants-dishes',
     title: 'Dishes1',
-    permission: 'DishesManagement',
+    // permission: 'DishesManagement',
     name: 'dishes',
     baseMenuItem: 'restaurant-menu',
     icon: CoffeeOutlined,
@@ -195,7 +195,7 @@ export const appRouters: any = [
   },
   {
     path: "/dish/:id",
-    permission: 'DishesManagement',
+    // permission: 'DishesManagement',
     title: 'DishDetails',
     name: 'dishDetails',
     icon: "",
@@ -206,7 +206,7 @@ export const appRouters: any = [
   {
     path: '/restaurants-orders',
     title: 'Orders1',
-    permission: 'RestaurantsManagement',
+    // permission: 'RestaurantsManagement',
     name: 'restaurantsOrders',
     baseMenuItem: 'restaurant-menu',
     icon: ShoppingCartOutlined,
@@ -215,7 +215,7 @@ export const appRouters: any = [
   },
   {
     path: "/order/:id",
-    //permission: 'DishesManagement',
+    permission: 'DishesManagement',
     title: 'OrderDetails',
     name: 'orderDetails',
     icon: "",
@@ -225,7 +225,7 @@ export const appRouters: any = [
 
 
   {
-    // permission: 'ShopsManagement',
+    permission: 'ShopsManagement',
     title: 'Shops',
     name: 'shop-menu',
     icon: ShopOutlined,
@@ -234,7 +234,7 @@ export const appRouters: any = [
   {
     path: '/shops',
     title: 'Shops',
-    // permission: 'RestaurantsManagement',
+    permission: 'RestaurantsManagement',
     name: 'shop',
     baseMenuItem: 'shop-menu',
     icon: ShopOutlined,
@@ -243,7 +243,7 @@ export const appRouters: any = [
   },
   {
     path: "/shop/:id",
-    permission: '',
+    // permission: '',
     title: 'ShopDetails',
     name: 'shopDetails',
     icon: "",
@@ -253,7 +253,7 @@ export const appRouters: any = [
   {
     path: '/shops-managers',
     title: 'ShopManagers',
-    // permission: 'ShopsManagement',
+    permission: 'ShopsManagement',
     name: 'shopsManager',
     baseMenuItem: 'shop-menu',
     icon: UserOutlined,
@@ -263,7 +263,7 @@ export const appRouters: any = [
   {
     path: '/products',
     title: 'Products1',
-    // permission: 'RestaurantsManagement',
+    permission: 'RestaurantsManagement',
     name: 'products',
     baseMenuItem: 'shop-menu',
     icon: ShoppingOutlined,
@@ -272,7 +272,7 @@ export const appRouters: any = [
   },
   {
     path: "/product/:id",
-    permission: '',
+    // permission: '',
     title: 'ProductDetails',
     name: 'productDetails',
     icon: "",
@@ -282,7 +282,7 @@ export const appRouters: any = [
   {
     path: '/shops-orders',
     title: 'Orders1',
-    // permission: 'ShopsManagement',
+    permission: 'ShopsManagement',
     name: 'shopsOrders',
     baseMenuItem: 'shop-menu',
     icon: ShoppingCartOutlined,
@@ -291,7 +291,7 @@ export const appRouters: any = [
   },
   {
     path: '/subscriptions',
-    permission: 'SubscriptionsManagement',
+    // permission: 'SubscriptionsManagement',
     title: 'Subscriptions',
     name: 'subscription',
     icon: BellOutlined,
@@ -300,7 +300,7 @@ export const appRouters: any = [
   },
   {
     path: "/subscription/:id",
-    permission: 'SubscriptionsManagement',
+    // permission: 'SubscriptionsManagement',
     title: 'SubscriptionDetails',
     name: 'subscriptionDetails',
     icon: "",
@@ -309,7 +309,7 @@ export const appRouters: any = [
   },
   {
     path: '/payments',
-    // permission: 'AdminsManagement',
+    permission: 'AdminsManagement',
     title: 'Payments',
     name: 'payment',
     icon: DollarOutlined,
@@ -319,7 +319,7 @@ export const appRouters: any = [
   {
     path: '/stories',
     title: 'Stories',
-    permission: 'StoriesManagement',
+    // permission: 'StoriesManagement',
     name: 'Stories',
     icon: BookOutlined,
     showInMenu: true,
@@ -327,7 +327,7 @@ export const appRouters: any = [
   },
   {
     path: '/locations',
-    permission: 'LocationsManagement',
+    // permission: 'LocationsManagement',
     title: 'Locations',
     name: 'location',
     icon: EnvironmentOutlined,
@@ -336,7 +336,7 @@ export const appRouters: any = [
   {
     path: '/countries',
     title: 'Countries',
-    permission: 'LocationsManagement',
+    // permission: 'LocationsManagement',
     name: 'country',
     baseMenuItem: 'location',
     icon: EnvironmentOutlined,
@@ -346,7 +346,7 @@ export const appRouters: any = [
   {
     path: '/cities',
     title: 'Cities',
-    permission: 'LocationsManagement',
+    // permission: 'LocationsManagement',
     name: 'city',
     baseMenuItem: 'location',
     icon: EnvironmentOutlined,
@@ -356,7 +356,7 @@ export const appRouters: any = [
 
   {
     path: '/admins',
-    permission: 'AdminsManagement',
+    // permission: 'AdminsManagement',
     title: 'Admins',
     name: 'admin',
     icon: UserOutlined,
@@ -372,7 +372,7 @@ export const appRouters: any = [
   },
   {
     path: '/exception?:type',
-    permission: '',
+    // permission: '',
     title: 'exception',
     name: 'exception',
     showInMenu: false,
