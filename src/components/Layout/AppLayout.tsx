@@ -51,10 +51,10 @@ class AppLayout extends React.Component<any> {
       <Layout style={{ minHeight: '100vh' }}>
         <SiderMenu path={this.props.location.pathname} onCollapse={this.onCollapse} history={history} collapsed={collapsed} />
         <Layout>
-          <Layout.Header style={{ minHeight: 52, padding: 0 }}>
+          <Layout.Header className="app-header">
             <Header collapsed={this.state.collapsed} toggle={this.toggle} pageTitle={L(utils.getPageTitleForHeader(pathname))} />
           </Layout.Header>
-          <Content style={{ margin: 16 }}>
+          <Content className="app-content">
             <Switch>
             {appRouters
                 .filter((item: any) => !item.isLayout && item.component !== undefined)

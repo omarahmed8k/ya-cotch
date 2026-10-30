@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const data = [
   { name: 'page 1', visit: 4000, session: 2400, amt: 2400 },
@@ -18,15 +18,17 @@ const data = [
 
 const LineChartExample: React.SFC = () => {
   return (
-    <LineChart width={1150} height={300} data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-      <XAxis dataKey="name" />
-      <YAxis />
-      <CartesianGrid strokeDasharray="3 3" />
+    <ResponsiveContainer width="100%" height={300}>
+    <LineChart data={data} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
+      <XAxis dataKey="name" stroke="#8a8f98" axisLine={false} tickLine={false} />
+      <YAxis stroke="#8a8f98" axisLine={false} tickLine={false} />
+      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eceef1" />
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="visit" stroke="#8884d8" activeDot={{ r: 12 }} />
-      <Line type="monotone" dataKey="session" stroke="#82ca9d" />
+      <Line type="monotone" dataKey="visit" stroke="#e6b800" strokeWidth={3} dot={false} activeDot={{ r: 6 }} />
+      <Line type="monotone" dataKey="session" stroke="#15171c" strokeWidth={3} dot={false} activeDot={{ r: 6 }} />
     </LineChart>
+    </ResponsiveContainer>
   );
 };
 

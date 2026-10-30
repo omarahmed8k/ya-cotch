@@ -1,47 +1,25 @@
-.trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
+.app-header.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  height: auto;
+  min-height: 68px;
+  padding: 0;
+  line-height: normal;
+  background: transparent !important;
 }
 
-.trigger:hover {
-  color: #1890ff;
+.app-content.ant-layout-content {
+  padding: 24px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-.logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
-}
-
-/* Let's get this party started */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: #455a64;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background: #455a64;
-}
-
-.sidebar {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 3px 10px 30px 3px rgba(0, 0, 0, 0.19);
+@media (max-width: 576px) {
+  .app-content.ant-layout-content {
+    padding: 14px;
+  }
 }
 
 .TableCardContainer {

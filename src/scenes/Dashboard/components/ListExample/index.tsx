@@ -16,6 +16,7 @@ export interface IListExampleProps {
 const ListExample: React.SFC<IListExampleProps> = (props: IListExampleProps) => {
   return (
     <List
+      className="dashboard-list"
       header={props.header}
       footer={props.footer}
       split={false}

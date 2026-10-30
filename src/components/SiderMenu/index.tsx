@@ -2,9 +2,9 @@ import './index.less';
 
 import * as React from 'react';
 
-import { Avatar, Col, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import { isGranted } from '../../lib/abpUtility';
-import Logo from '../../images/logo.png';
+import LogoMark from '../../images/logo-mark.png';
 import { appRouters } from '../../components/Router/router.config';
 import { L } from '../../i18next';
 import SubMenu from 'antd/lib/menu/SubMenu';
@@ -42,18 +42,18 @@ const handleSelectedSubmenuItem = (path:string) => {
 const SiderMenu = (props: ISiderMenuProps) => {
   const { collapsed, history, onCollapse,path } = props;
   return (
-    <Sider trigger={null} className={'sidebar'} width={240} collapsible collapsed={collapsed} onCollapse={onCollapse}>
-      {collapsed ? (
-         <Col style={{ textAlign: 'center', marginTop: 15, marginBottom: 10 }}>
-         <Avatar shape="square" style={{ height: 45, width: 40 }} src={Logo} />
-       </Col>
-      ) : (
-        <Col style={{ textAlign: 'center', marginTop: 15, marginBottom: 20 }}>
-        <Avatar shape="square" style={{ height: 92, width: 80 }} src={Logo} />
-      </Col>
-      )}
+    <Sider trigger={null} className={'sidebar'} width={256} collapsedWidth={76} collapsible collapsed={collapsed} onCollapse={onCollapse}>
+      <div className={collapsed ? 'sidebar-brand collapsed' : 'sidebar-brand'}>
+        <img className="sidebar-brand-mark" src={LogoMark} alt="YaCotch" />
+        {!collapsed && (
+          <div className="sidebar-brand-text">
+            <span className="sidebar-brand-name">YaCotch</span>
+            <span className="sidebar-brand-caption">{L('AdminPanel')}</span>
+          </div>
+        )}
+      </div>
 
-      <Menu  mode="inline" selectedKeys={[path]} defaultOpenKeys={handleSelectedSubmenuItem(path) }>
+      <Menu className="sidebar-menu" theme="dark" mode="inline" selectedKeys={[path]} defaultOpenKeys={handleSelectedSubmenuItem(path) }>
         {appRouters
           .filter((item: any) => !item.isLayout && item.showInMenu && item.baseMenuItem === undefined)
           .map((route: any, index: number) => {

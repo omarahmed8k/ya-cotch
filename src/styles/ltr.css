@@ -3,10 +3,6 @@
     text-align: left;
   }
   
-  .lang .global-icon {
-    right: 2%;
-  }
-  
   .ltr-content .ant-table-row-cell-break-word {
     text-align: left !important;
   }

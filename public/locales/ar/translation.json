@@ -393,5 +393,8 @@
   "ClickToPreviewStoryVideo": "انقر لمشاهدة فيديو القصة",
   "StoryVideo": "فيديو القصة",
   "StoryDetails": "تفاصيل القصة",
-  "SearchByDescription": "البحث حسب المحتوى"
+  "SearchByDescription": "البحث حسب المحتوى",
+  "AdminPanel": "لوحة التحكم",
+  "LoginSubtitle": "سجّل الدخول لإدارة المدربين والمطاعم والمتاجر وغيرها.",
+  "BrandTagline": "كل ما يحتاجه نشاطك الرياضي في مكان واحد."
 }

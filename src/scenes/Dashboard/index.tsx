@@ -32,150 +32,63 @@ export class Dashboard extends React.Component<any> {
       { title: 'LAST WEEK', body: '26.582 user' },
     ];
 
-    return (
-      <React.Fragment>
-        <Row gutter={16}>
-          <Col
-            className={'dashboardCard'}
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 11 }}
-            lg={{ offset: 1, span: 11 }}
-            xl={{ offset: 0, span: 6 }}
-            xxl={{ offset: 0, span: 6 }}
-          >
-            <Card className={'dasboardCard-task'} bodyStyle={{ padding: 10 }} loading={cardLoading} bordered={false}>
-              <Col span={8}>
-                <CheckOutlined className={'dashboardCardIcon'} />
-              </Col>
-              <Col span={16}>
-                <p className={'dashboardCardName'}>New Task</p>
-                <label className={'dashboardCardCounter'}>125</label>
-              </Col>
-            </Card>
-          </Col>
-          <Col
-            className={'dashboardCard'}
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 11 }}
-            lg={{ offset: 1, span: 11 }}
-            xl={{ offset: 0, span: 6 }}
-            xxl={{ offset: 0, span: 6 }}
-          >
-            <Card className={'dasboardCard-ticket'} bodyStyle={{ padding: 10 }} loading={cardLoading} bordered={false}>
-              <Col span={8}>
-                <QuestionOutlined className={'dashboardCardIcon'} />
-              </Col>
-              <Col span={16}>
-                <p className={'dashboardCardName'}>New Ticket</p>
-                <label className={'dashboardCardCounter'}>257</label>
-              </Col>
-            </Card>
-          </Col>
-          <Col
-            className={'dashboardCard'}
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 11 }}
-            lg={{ offset: 1, span: 11 }}
-            xl={{ offset: 0, span: 6 }}
-            xxl={{ offset: 0, span: 6 }}
-          >
-            <Card className={'dasboardCard-comment'} bodyStyle={{ padding: 10 }} loading={cardLoading} bordered={false}>
-              <Col span={8}>
-                <MessageOutlined className={'dashboardCardIcon'} />
-              </Col>
-              <Col span={16}>
-                <p className={'dashboardCardName'}>New Comments</p>
-                <label className={'dashboardCardCounter'}>243</label>
-              </Col>
-            </Card>
-          </Col>
-          <Col
-            className={'dashboardCard'}
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 11 }}
-            lg={{ offset: 1, span: 11 }}
-            xl={{ offset: 0, span: 6 }}
-            xxl={{ offset: 0, span: 6 }}
-          >
-            <Card className={'dasboardCard-visitor'} bodyStyle={{ padding: 10 }} loading={cardLoading} bordered={false}>
-              <Col span={8}>
-                <UserAddOutlined className={'dashboardCardIcon'} />
-              </Col>
-              <Col span={16}>
-                <p className={'dashboardCardName'}>New Visitors</p>
-                <label className={'dashboardCardCounter'}>1225</label>
-              </Col>
-            </Card>
-          </Col>
-        </Row>
+    const statCards = [
+      { name: 'New Task', counter: 125, icon: <CheckOutlined />, variant: 'accent' },
+      { name: 'New Ticket', counter: 257, icon: <QuestionOutlined />, variant: 'dark' },
+      { name: 'New Comments', counter: 243, icon: <MessageOutlined />, variant: 'light' },
+      { name: 'New Visitors', counter: 1225, icon: <UserAddOutlined />, variant: 'light' },
+    ];
 
-        <Row>
+    const trendCards = [
+      { title: 'Visitors', color: '#e6b800' },
+      { title: 'Social Trends', color: '#15171c' },
+      { title: 'Answered Tickets', color: '#8a8f98' },
+    ];
+
+    return (
+      <div className="dashboard">
+        <Row gutter={[20, 20]}>
+          {statCards.map(card => (
+            <Col key={card.name} xs={24} sm={12} xl={6}>
+              <Card className={`dashboardCard dashboardCard-${card.variant}`} loading={cardLoading} bordered={false}>
+                <div className="dashboardCardBody">
+                  <div>
+                    <p className="dashboardCardName">{card.name}</p>
+                    <span className="dashboardCardCounter">{card.counter.toLocaleString()}</span>
+                  </div>
+                  <span className="dashboardCardIcon">{card.icon}</span>
+                </div>
+              </Card>
+            </Col>
+          ))}
+
           <Col span={24}>
-            <Card className={'dashboardBox'} title="Visit Statistics" loading={lineChartLoading} bordered={false}>
+            <Card className="dashboardBox" title="Visit Statistics" loading={lineChartLoading} bordered={false}>
               <LineChartExample />
             </Card>
           </Col>
-        </Row>
 
-        <Row gutter={16}>
-          <Col
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 22 }}
-            lg={{ offset: 0, span: 8 }}
-            xl={{ offset: 0, span: 8 }}
-            xxl={{ offset: 0, span: 8 }}
-          >
-            <Card className={'dashboardCardTinyLine'} loading={barChartLoading} bordered={false}>
-              <TinyLineChartExample />
-              <ListExample value={visitorStatisticList} />
-            </Card>
-          </Col>
-          <Col
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 22 }}
-            lg={{ offset: 0, span: 8 }}
-            xl={{ offset: 0, span: 8 }}
-            xxl={{ offset: 0, span: 8 }}
-          >
-            <Card className={'latestSocialTrendsList'} loading={barChartLoading} bordered={false}>
-              <TinyLineChartExample />
-              <ListExample value={visitorStatisticList} />
-            </Card>
-          </Col>
-          <Col
-            xs={{ offset: 1, span: 22 }}
-            sm={{ offset: 1, span: 22 }}
-            md={{ offset: 1, span: 22 }}
-            lg={{ offset: 0, span: 8 }}
-            xl={{ offset: 0, span: 8 }}
-            xxl={{ offset: 0, span: 8 }}
-          >
-            <Card className={'answeredTickeds'} loading={barChartLoading} bordered={false}>
-              <TinyLineChartExample />
-              <ListExample value={visitorStatisticList} />
-            </Card>
-          </Col>
-        </Row>
+          {trendCards.map(card => (
+            <Col key={card.title} xs={24} lg={8}>
+              <Card className="dashboardBox" title={card.title} loading={barChartLoading} bordered={false}>
+                <TinyLineChartExample color={card.color} />
+                <ListExample value={visitorStatisticList} />
+              </Card>
+            </Col>
+          ))}
 
-        <Row gutter={16}>
-          <Col span={16}>
-            <Card title="Payment Statistics" className={'dashboardBox'} loading={barChartLoading} bordered={false}>
+          <Col xs={24} xl={16}>
+            <Card title="Payment Statistics" className="dashboardBox" loading={barChartLoading} bordered={false}>
               <BarChartExample />
             </Card>
           </Col>
-          <Col span={8}>
-            <Card title="Browser Usage" className={'dashboardBox'} loading={pieChartLoading} bordered={false}>
+          <Col xs={24} xl={8}>
+            <Card title="Browser Usage" className="dashboardBox" loading={pieChartLoading} bordered={false}>
               <PieChartExample />
             </Card>
           </Col>
         </Row>
-      </React.Fragment>
+      </div>
     );
   }
 }

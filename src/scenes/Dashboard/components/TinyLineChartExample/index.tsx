@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LineChart, Line } from 'recharts';
+import { ResponsiveContainer, LineChart, Line } from 'recharts';
 
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
@@ -11,11 +11,17 @@ const data = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
-const TinyLineChartExample: React.SFC = () => {
+export interface ITinyLineChartExampleProps {
+  color?: string;
+}
+
+const TinyLineChartExample: React.SFC<ITinyLineChartExampleProps> = ({ color = '#ffce03' }) => {
   return (
-    <LineChart width={300} height={100} data={data}>
-      <Line type="monotone" dataKey="pv" stroke="#fff" strokeWidth={2} />
-    </LineChart>
+    <ResponsiveContainer width="100%" height={90}>
+      <LineChart data={data}>
+        <Line type="monotone" dataKey="pv" stroke={color} strokeWidth={3} dot={false} />
+      </LineChart>
+    </ResponsiveContainer>
   );
 };
 

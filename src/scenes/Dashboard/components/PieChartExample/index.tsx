@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PieChart, Pie, Tooltip } from 'recharts';
+import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 const data = [
   { name: 'Chrome', value: 50 },
@@ -7,6 +7,8 @@ const data = [
   { name: 'Opera Browser', value: 15 },
   { name: 'Other', value: 5 },
 ];
+
+const COLORS = ['#ffce03', '#15171c', '#8a8f98', '#d9dce1'];
 
 class PieChartExample extends React.Component<any> {
   state = {
@@ -27,10 +29,17 @@ class PieChartExample extends React.Component<any> {
 
   render() {
     return (
-      <PieChart width={300} height={300}>
-        <Pie dataKey="value" data={data} cx={150} cy={150} outerRadius={80} fill="#8884d8" label />
-        <Tooltip />
-      </PieChart>
+      <ResponsiveContainer width="100%" height={320}>
+        <PieChart>
+          <Pie dataKey="value" data={data} innerRadius={70} outerRadius={105} paddingAngle={3}>
+            {data.map((entry, index) => (
+              <Cell key={entry.name} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+          <Legend iconType="circle" />
+        </PieChart>
+      </ResponsiveContainer>
     );
   }
 }

@@ -1,6 +1,6 @@
 import './index.less';
 import * as React from 'react';
-import { Button, Card, Checkbox, Col, Form, Input, Row } from 'antd';
+import { Button, Checkbox, Form, Input } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { inject, observer } from 'mobx-react';
 import AccountStore from '../../stores/accountStore';
@@ -12,6 +12,8 @@ import Stores from '../../stores/storeIdentifier';
 import rules from './index.validation';
 import { L } from '../../i18next';
 import Logo from '../../images/logo.png';
+import LogoMark from '../../images/logo-mark.png';
+import Footer from '../../components/Footer';
 
 const FormItem = Form.Item;
 
@@ -69,7 +71,7 @@ class Login extends React.Component<ILoginProps> {
 
     const { loginModel } = this.props.authenticationStore!;
     return (
-      <Form className="" onFinish={this.handleSubmit} ref={this.formRef}>
+      <Form className="login-form" onFinish={this.handleSubmit} ref={this.formRef}>
           {/* <Row style={{ marginTop: 100 }}>
             <Col span={8} offset={8}>
               <Card>
@@ -115,41 +117,43 @@ class Login extends React.Component<ILoginProps> {
             </Modal>
           </Row>
           */}
-           <Row>
-           
-            <img src={Logo}
-                style={{ display: 'inherit', margin: 'auto', marginTop: '30px', marginBottom: '20px', width: '200px' }} />
-           
-           
-                </Row>
-          <Row style={{ marginTop: 10 }}>
-            <Col span={8} offset={8}>
-              <Card>
-                <div>
-                  <h3 style={{ textAlign: 'center' }}>{L('WelcomeMessage')}</h3>
-                </div>
-                <FormItem name={'userNameOrEmailAddress'} rules={rules.userNameOrEmailAddress}>
-                  <Input placeholder={L('UserNameOrEmail')} prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} />
-                </FormItem>
+        <div className="login-page">
+          <aside className="login-brand">
+            <div className="login-brand-inner">
+              <img className="login-brand-mark" src={LogoMark} alt="YaCotch" />
+              <h1 className="login-brand-title">YaCotch</h1>
+              <p className="login-brand-tagline">{L('BrandTagline')}</p>
+            </div>
+            <Footer />
+          </aside>
 
-                <FormItem name={'password'} rules={rules.password}>
-                  <Input.Password visibilityToggle placeholder={L('Password')} prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />} type="password"  />
-                </FormItem>
-                <Row style={{ margin: '0px 0px  15px ' }} className="login-footer">
-                  <div>
-                    <Checkbox checked={loginModel.rememberMe} onChange={loginModel.toggleRememberMe} style={{ paddingRight: 8 }} />
-                    {L('RememberMe')}
-                    </div>
-                    {/* <a>{L('ForgotPassword')}</a> */}
-                 
-                    <Button style={{color:'#333'}} type="primary" htmlType={'submit'} loading={this.props.authenticationStore!.isLoggingIn} >
-                      {L('LogIn')}
-                    </Button>
-                 
-                </Row>
-              </Card>
-            </Col>
-          </Row>
+          <main className="login-panel">
+            <div className="login-card">
+              <img className="login-logo" src={Logo} alt="YaCotch" />
+              <h2 className="login-title">{L('WelcomeMessage')}</h2>
+              <p className="login-subtitle">{L('LoginSubtitle')}</p>
+
+              <FormItem name={'userNameOrEmailAddress'} rules={rules.userNameOrEmailAddress}>
+                <Input size="large" placeholder={L('UserNameOrEmail')} prefix={<UserOutlined className="login-input-icon" />} />
+              </FormItem>
+
+              <FormItem name={'password'} rules={rules.password}>
+                <Input.Password size="large" visibilityToggle placeholder={L('Password')} prefix={<LockOutlined className="login-input-icon" />} type="password" />
+              </FormItem>
+
+              <div className="login-footer">
+                <Checkbox checked={loginModel.rememberMe} onChange={loginModel.toggleRememberMe}>
+                  {L('RememberMe')}
+                </Checkbox>
+                {/* <a>{L('ForgotPassword')}</a> */}
+              </div>
+
+              <Button block size="large" type="primary" htmlType={'submit'} loading={this.props.authenticationStore!.isLoggingIn}>
+                {L('LogIn')}
+              </Button>
+            </div>
+          </main>
+        </div>
       </Form>
     );
   }

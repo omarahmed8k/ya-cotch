@@ -379,5 +379,8 @@
   "ClickToPreviewStoryVideo": "Click to preview story video",
   "StoryVideo": "Story Video",
   "StoryDetails": "Story Details",
-  "SearchByDescription": "Search by Description"
+  "SearchByDescription": "Search by Description",
+  "AdminPanel": "Admin Panel",
+  "LoginSubtitle": "Sign in to manage trainers, restaurants, shops and more.",
+  "BrandTagline": "Everything your fitness business needs, in one place."
 }
